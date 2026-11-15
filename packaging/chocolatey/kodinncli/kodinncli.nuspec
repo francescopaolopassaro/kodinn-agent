@@ -5,11 +5,22 @@
     <version>0.9.4</version>
     <title>Kodinn Agent (KodinnCli)</title>
     <authors>Passaro Francesco Paolo</authors>
-    <projectUrl>https://www.digitalsolutions.it</projectUrl>
+    <owners>Passaro Francesco Paolo</owners>
+    <projectUrl>https://github.com/francescopaolopassaro/kodinn-agent</projectUrl>
+    <packageSourceUrl>https://github.com/francescopaolopassaro/kodinn-agent/tree/main/packaging/chocolatey</packageSourceUrl>
+    <docsUrl>https://github.com/francescopaolopassaro/kodinn-agent/blob/main/docs/COMMANDS.md</docsUrl>
+    <bugTrackerUrl>https://github.com/francescopaolopassaro/kodinn-agent/issues</bugTrackerUrl>
     <licenseUrl>https://github.com/francescopaolopassaro/kodinn-agent/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Kodinn Agent: a terminal AI coding agent (cloud and local models, plan/build modes, git, MCP).</description>
-    <tags>ai agent cli coding</tags>
+    <copyright>Passaro Francesco Paolo</copyright>
+    <summary>An AI coding agent in your terminal: cloud models, Ollama, or local models with no server.</summary>
+    <description>Kodinn Agent: a terminal AI coding agent (cloud and local models, plan/build modes, git, MCP).
+
+Kodinn Agent reads your project, edits files, runs commands and tests and works through git, with any cloud model (Anthropic, OpenAI, OpenRouter, Gemini, DeepSeek, Mistral, xAI…), Ollama, or a local .gguf model running inside the app on the built-in DesireeIA engine. Plan and build modes, sub-agents, MCP servers, skills, hooks, encrypted settings.
+
+Run `kodinn` in a project folder; the first run guides you through choosing a model.</description>
+    <releaseNotes>https://github.com/francescopaolopassaro/kodinn-agent/blob/main/CHANGELOG.md</releaseNotes>
+    <tags>kodinn ai agent cli coding llm terminal ollama</tags>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
