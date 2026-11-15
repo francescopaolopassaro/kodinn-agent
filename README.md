@@ -1,9 +1,11 @@
-# Kodinn Agent
+<h1 align="center">Kodinn Agent</h1>
 
-![Version](https://img.shields.io/badge/version-0.9.4_beta-orange.svg?style=flat-square)
-![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Linux%20%7C%20macOS-blue.svg?style=flat-square)
-[![npm](https://img.shields.io/npm/v/kodinncli.svg?style=flat-square)](https://www.npmjs.com/package/kodinncli)
-![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)
+<p align="center">
+  <a href="https://github.com/francescopaolopassaro/kodinn-agent/blob/main/CHANGELOG.md"><img alt="Version 0.9.4 beta" src="https://img.shields.io/badge/version-0.9.4%20beta-fb923c?style=for-the-badge"></a>
+  <a href="https://www.npmjs.com/package/kodinncli"><img alt="npm" src="https://img.shields.io/npm/v/kodinncli?style=for-the-badge&logo=npm&color=cb3837"></a>
+  <a href="#get-started"><img alt="Windows, Linux, macOS" src="https://img.shields.io/badge/Windows%20%C2%B7%20Linux%20%C2%B7%20macOS-2563eb?style=for-the-badge"></a>
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-16a34a?style=for-the-badge"></a>
+</p>
 
 Kodinn Agent (`KodinnCli`) is an AI coding agent that lives in your terminal. It reads your project, edits files,
 runs commands and tests, and works through git — with **any cloud model, Ollama, or a local model running inside the
