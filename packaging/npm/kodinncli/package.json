@@ -1,0 +1,39 @@
+{
+  "name": "kodinncli",
+  "version": "0.9.4",
+  "description": "Kodinn Agent: a terminal AI coding agent (cloud and local models, plan/build modes, git, MCP).",
+  "license": "MIT",
+  "author": "Passaro Francesco Paolo",
+  "homepage": "https://github.com/francescopaolopassaro/kodinn-agent",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francescopaolopassaro/kodinn-agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/francescopaolopassaro/kodinn-agent/issues"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "cli",
+    "coding",
+    "llm",
+    "claude",
+    "openai",
+    "ollama",
+    "terminal",
+    "kodinn"
+  ],
+  "bin": {
+    "kodinn": "bin/kodinn.js",
+    "kodinncli": "bin/kodinn.js"
+  },
+  "files": [
+    "bin/",
+    "builds.json",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

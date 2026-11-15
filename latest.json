@@ -1,0 +1,43 @@
+{
+  "version": "0.9.4",
+  "channel": "beta",
+  "published": "2026-11-15T11:00:27Z",
+  "notes": "https://github.com/francescopaolopassaro/kodinn-agent/blob/main/CHANGELOG.md",
+  "files": {
+    "win-x64": {
+      "name": "KodinnCli-0.9.4-win-x64.zip",
+      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.4/KodinnCli-0.9.4-win-x64.zip",
+      "sha256": "eee9e0c9a3ae5566125700f4122cacdd1b04bfbad39705e265e1a65ba7577149",
+      "size": 119049241,
+      "folder": "KodinnCli-0.9.4-win-x64"
+    },
+    "linux-x64": {
+      "name": "KodinnCli-0.9.4-linux-x64.tar.gz",
+      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.4/KodinnCli-0.9.4-linux-x64.tar.gz",
+      "sha256": "b724bbe7d5bbe910bb6916f93fa4e1a491cb53534890831fc33255f993087aac",
+      "size": 110461786,
+      "folder": "KodinnCli-0.9.4-linux-x64"
+    },
+    "linux-arm64": {
+      "name": "KodinnCli-0.9.4-linux-arm64.tar.gz",
+      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.4/KodinnCli-0.9.4-linux-arm64.tar.gz",
+      "sha256": "26d1b1e331cc395ac2088445907338a8ef4067d2bc4247f8fcef1d072f360bbf",
+      "size": 108519287,
+      "folder": "KodinnCli-0.9.4-linux-arm64"
+    },
+    "osx-arm64": {
+      "name": "KodinnCli-0.9.4-osx-arm64.tar.gz",
+      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.4/KodinnCli-0.9.4-osx-arm64.tar.gz",
+      "sha256": "e6ab3fb6514516a89d8f1b35828d783df2bc00fb1bdba870b6c3ffd28c966878",
+      "size": 107782743,
+      "folder": "KodinnCli-0.9.4-osx-arm64"
+    },
+    "osx-x64": {
+      "name": "KodinnCli-0.9.4-osx-x64.tar.gz",
+      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.4/KodinnCli-0.9.4-osx-x64.tar.gz",
+      "sha256": "f2518171566471697fca0262505250405bbcf1fedfdea557ea44d2e24f753f43",
+      "size": 109769875,
+      "folder": "KodinnCli-0.9.4-osx-x64"
+    }
+  }
+}

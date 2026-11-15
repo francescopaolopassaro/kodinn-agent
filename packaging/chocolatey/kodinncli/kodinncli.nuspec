@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>kodinncli</id>
+    <version>0.9.4</version>
+    <title>Kodinn Agent (KodinnCli)</title>
+    <authors>Passaro Francesco Paolo</authors>
+    <projectUrl>https://www.digitalsolutions.it</projectUrl>
+    <licenseUrl>https://github.com/francescopaolopassaro/kodinn-agent/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Kodinn Agent: a terminal AI coding agent (cloud and local models, plan/build modes, git, MCP).</description>
+    <tags>ai agent cli coding</tags>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
