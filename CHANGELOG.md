@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.9.5 beta — 2026-11-18
+
+### New
+- **Local models keep the whole conversation of a session on disk, one file per session.** Two sessions (or two windows) never share a
+  cache file, and a file that is in use is never touched by another run.
+- **DesireeIA 0.4.7**, the built-in engine: models with local-attention layers (Spark, Gemma 3) now keep only the window of those layers in
+  the cache, so the same 6 GB graphics card holds a context of 32,000 tokens instead of 16,000. The engine also runs Gemma 4 files
+  (checked by hand on one model).
+
+### Fixed
+- **A local model can no longer end a turn on a broken tool call.** The engine only lets the model write a call that names a declared tool;
+  a call that still comes out damaged (missing quote, single backslashes in a Windows path, unbalanced braces, a stray closing tag) is read
+  anyway, and when it cannot be read the agent asks the model to send it again, up to three times, instead of showing the raw text as the
+  answer.
+- Resuming a long session with a local model no longer reads back a cache that does not match the conversation.
+
 ## 0.9.4 beta — 2026-11-15
 
 ### New

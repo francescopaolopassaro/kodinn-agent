@@ -1,7 +1,7 @@
 <h1 align="center">Kodinn Agent</h1>
 
 <p align="center">
-  <a href="https://github.com/francescopaolopassaro/kodinn-agent/blob/main/CHANGELOG.md"><img alt="Version 0.9.4 beta" src="https://img.shields.io/badge/version-0.9.4%20beta-fb923c?style=for-the-badge"></a>
+  <a href="https://github.com/francescopaolopassaro/kodinn-agent/blob/main/CHANGELOG.md"><img alt="Version 0.9.5 beta" src="https://img.shields.io/badge/version-0.9.5%20beta-fb923c?style=for-the-badge"></a>
   <a href="https://www.npmjs.com/package/kodinncli"><img alt="npm" src="https://img.shields.io/npm/v/kodinncli?style=for-the-badge&logo=npm&color=cb3837"></a>
   <a href="#get-started"><img alt="Windows, Linux, macOS" src="https://img.shields.io/badge/Windows%20%C2%B7%20Linux%20%C2%B7%20macOS-2563eb?style=for-the-badge"></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-16a34a?style=for-the-badge"></a>
@@ -85,7 +85,8 @@ the next provider when one fails.
 
 **Local models with no server.** The built-in **DesireeIA** engine runs `.gguf` models inside the app, on CPU or NVIDIA
 GPU. `/localmodels search` finds models on Hugging Face and `/localmodels download` fetches one with checksum
-verification. Tools, sub-agents and plan mode work with local models too.
+verification. Tools, sub-agents and plan mode work with local models too, and each session keeps its own
+conversation cache on disk.
 
 **Modes you can see.** `Shift+Tab` cycles the working mode and the bar beside the prompt takes its colour:
 **always-ask**, **plan** (teal — read-only: the agent investigates and writes the plan), **build** (orange — edits
