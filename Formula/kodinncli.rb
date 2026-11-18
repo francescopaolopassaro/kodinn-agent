@@ -1,28 +1,28 @@
 class Kodinncli < Formula
   desc "Kodinn Agent: a terminal AI coding agent (cloud and local models, plan/build modes, git, MCP)."
   homepage "https://www.digitalsolutions.it"
-  version "0.9.4"
+  version "0.9.5"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://www.digitalsolutions.it/downloads/kodinncli/0.9.4/KodinnCli-0.9.4-osx-arm64.tar.gz"
-      sha256 "e6ab3fb6514516a89d8f1b35828d783df2bc00fb1bdba870b6c3ffd28c966878"
+      url "https://www.digitalsolutions.it/downloads/kodinncli/0.9.5/KodinnCli-0.9.5-osx-arm64.tar.gz"
+      sha256 "f14ba43c1a617b4ba19233c73ee5f55f64065d13b309f7955fdc3e162cc6f869"
     end
     on_intel do
-      url "https://www.digitalsolutions.it/downloads/kodinncli/0.9.4/KodinnCli-0.9.4-osx-x64.tar.gz"
-      sha256 "f2518171566471697fca0262505250405bbcf1fedfdea557ea44d2e24f753f43"
+      url "https://www.digitalsolutions.it/downloads/kodinncli/0.9.5/KodinnCli-0.9.5-osx-x64.tar.gz"
+      sha256 "1029849de81cac11856ddea2f399865f130f4d81858909ecfd4f3f55f4fe788a"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://www.digitalsolutions.it/downloads/kodinncli/0.9.4/KodinnCli-0.9.4-linux-arm64.tar.gz"
-      sha256 "26d1b1e331cc395ac2088445907338a8ef4067d2bc4247f8fcef1d072f360bbf"
+      url "https://www.digitalsolutions.it/downloads/kodinncli/0.9.5/KodinnCli-0.9.5-linux-arm64.tar.gz"
+      sha256 "8285a38c9ad18ba0493cbfa0d834c95408f049df1cba6a5ba1698b835f6a3017"
     end
     on_intel do
-      url "https://www.digitalsolutions.it/downloads/kodinncli/0.9.4/KodinnCli-0.9.4-linux-x64.tar.gz"
-      sha256 "b724bbe7d5bbe910bb6916f93fa4e1a491cb53534890831fc33255f993087aac"
+      url "https://www.digitalsolutions.it/downloads/kodinncli/0.9.5/KodinnCli-0.9.5-linux-x64.tar.gz"
+      sha256 "8a84c3bc94c163576303bc6a85596593c407aa8f2c1fff5edf8d28f589149c54"
     end
   end
 

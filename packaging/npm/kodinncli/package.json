@@ -1,6 +1,6 @@
 {
   "name": "kodinncli",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Kodinn Agent: a terminal AI coding agent (cloud and local models, plan/build modes, git, MCP).",
   "license": "MIT",
   "author": "Passaro Francesco Paolo",
