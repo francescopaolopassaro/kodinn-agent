@@ -13,7 +13,7 @@ app** with no server at all.
 
 It is the terminal edition of **Kodinn**, by Passaro Francesco Paolo — [www.digitalsolutions.it](https://www.digitalsolutions.it).
 
-<img src="https://raw.githubusercontent.com/francescopaolopassaro/kodinn-agent/main/assets/demo.gif" alt="Kodinn Agent: the splash, then Spark X2.6 running locally analyses a project in seconds" width="100%" />
+<img src="https://raw.githubusercontent.com/francescopaolopassaro/kodinn-agent/main/assets/kodinn-launch.gif" alt="Kodinn Agent: the splash, then Spark X2.6 running locally analyses a project in seconds" width="100%" />
 
 *Spark X2.6 (4B, running locally inside Kodinn Agent on the DesireeIA engine) reads a project and answers — no cloud,
 no server.*
