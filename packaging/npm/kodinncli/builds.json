@@ -1,38 +1,38 @@
 {
-  "version": "0.9.5",
+  "version": "0.9.6",
   "builds": {
     "win32-x64": {
-      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.5/KodinnCli-0.9.5-win-x64.zip",
-      "sha256": "4405b9b4b1288181e429dc47b2d00ad617ae45b167e85f75037fb7470221d265",
-      "folder": "KodinnCli-0.9.5-win-x64",
+      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.6/KodinnCli-0.9.6-win-x64.zip",
+      "sha256": "92db84ab03ca647288567ef669cbc263673c081e0e0b4d047be9467af7eec71c",
+      "folder": "KodinnCli-0.9.6-win-x64",
       "exe": "KodinnCli.exe",
       "zip": true
     },
     "linux-x64": {
-      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.5/KodinnCli-0.9.5-linux-x64.tar.gz",
-      "sha256": "8a84c3bc94c163576303bc6a85596593c407aa8f2c1fff5edf8d28f589149c54",
-      "folder": "KodinnCli-0.9.5-linux-x64",
+      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.6/KodinnCli-0.9.6-linux-x64.tar.gz",
+      "sha256": "a764e7c1926cc5d456f8bd75d478e7f36a1a66773cbc953b5a9a478c470e1169",
+      "folder": "KodinnCli-0.9.6-linux-x64",
       "exe": "KodinnCli",
       "zip": false
     },
     "linux-arm64": {
-      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.5/KodinnCli-0.9.5-linux-arm64.tar.gz",
-      "sha256": "8285a38c9ad18ba0493cbfa0d834c95408f049df1cba6a5ba1698b835f6a3017",
-      "folder": "KodinnCli-0.9.5-linux-arm64",
+      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.6/KodinnCli-0.9.6-linux-arm64.tar.gz",
+      "sha256": "2a872eb92e80e087a16e59292b97416270f9b2a0830caa92f8243f6c16dd77ac",
+      "folder": "KodinnCli-0.9.6-linux-arm64",
       "exe": "KodinnCli",
       "zip": false
     },
     "darwin-arm64": {
-      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.5/KodinnCli-0.9.5-osx-arm64.tar.gz",
-      "sha256": "f14ba43c1a617b4ba19233c73ee5f55f64065d13b309f7955fdc3e162cc6f869",
-      "folder": "KodinnCli-0.9.5-osx-arm64",
+      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.6/KodinnCli-0.9.6-osx-arm64.tar.gz",
+      "sha256": "3ce570c776002cdcba7b53fcfa67973db502f60236ad9dda46ee5204af831273",
+      "folder": "KodinnCli-0.9.6-osx-arm64",
       "exe": "KodinnCli",
       "zip": false
     },
     "darwin-x64": {
-      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.5/KodinnCli-0.9.5-osx-x64.tar.gz",
-      "sha256": "1029849de81cac11856ddea2f399865f130f4d81858909ecfd4f3f55f4fe788a",
-      "folder": "KodinnCli-0.9.5-osx-x64",
+      "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.6/KodinnCli-0.9.6-osx-x64.tar.gz",
+      "sha256": "4f12d3bac5b746db01a62c4a27f49906b70aaf504399fd04fc6c55cc16f2ffc9",
+      "folder": "KodinnCli-0.9.6-osx-x64",
       "exe": "KodinnCli",
       "zip": false
     }
