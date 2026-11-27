@@ -1,13 +1,13 @@
 {
-    "version": "0.9.6",
+    "version": "0.9.7",
     "description": "Kodinn Agent: a terminal AI coding agent (cloud and local models, plan/build modes, git, MCP).",
     "homepage": "https://github.com/francescopaolopassaro/kodinn-agent",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.6/KodinnCli-0.9.6-win-x64.zip",
-            "hash": "92db84ab03ca647288567ef669cbc263673c081e0e0b4d047be9467af7eec71c",
-            "extract_dir": "KodinnCli-0.9.6-win-x64"
+            "url": "https://www.digitalsolutions.it/downloads/kodinncli/0.9.7/KodinnCli-0.9.7-win-x64.zip",
+            "hash": "293701dd1abab8c82d2b4e6135a7aa58d08e17cb052d2034d5c757bb31b69179",
+            "extract_dir": "KodinnCli-0.9.7-win-x64"
         }
     },
     "bin": [

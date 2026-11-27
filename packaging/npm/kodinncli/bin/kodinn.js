@@ -49,6 +49,52 @@ function download(url, file, redirects = 5) {
   });
 }
 
+// FALLBACK: Node ships its own CA list, so behind a proxy that re-signs TLS ("self-signed certificate in certificate chain")
+// it fails where the OS works. curl.exe / PowerShell use the system trust store. The SHA-256 is still verified afterwards.
+function downloadWithSystemTool(url, file) {
+  const attempts = [];
+  if (process.platform === "win32") {
+    const winCurl = path.join(process.env.SystemRoot || "C:\\Windows", "System32", "curl.exe");
+    if (fs.existsSync(winCurl)) attempts.push([winCurl, ["-fL", "--retry", "2", "-o", file, url]]);
+    attempts.push(["powershell", ["-NoProfile", "-Command",
+      `$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -UseBasicParsing -Uri '${url}' -OutFile '${file.replace(/'/g, "''")}'`]]);
+  } else {
+    attempts.push(["curl", ["-fL", "--retry", "2", "-o", file, url]]);
+    attempts.push(["wget", ["-O", file, url]]);
+  }
+  for (const [cmd, args] of attempts) {
+    const r = spawnSync(cmd, args, { stdio: "inherit" });
+    if (!r.error && r.status === 0 && fs.existsSync(file)) return true;
+  }
+  return false;
+}
+
+// Every place the same archive can come from, in order: the site, then the GitHub release of the public repository.
+function sources() {
+  const list = [build.url];
+  const home_ = manifest.homepage || require(path.join(__dirname, "..", "package.json")).homepage || "";
+  const m = /github\.com\/([^/]+\/[^/.]+)/.exec(home_);
+  // The release tag was created by hand as "v.0.9.5" once; publish_all.sh uses "v0.9.7". Both are tried.
+  if (m) for (const tag of [`v${manifest.version}`, `v.${manifest.version}`])
+    list.push(`https://github.com/${m[1]}/releases/download/${tag}/${path.basename(new URL(build.url).pathname)}`);
+  return list;
+}
+
+async function fetchArchive(archive) {
+  const errors = [];
+  for (const url of sources()) {
+    try { await download(url, archive); if (sha256(archive) === build.sha256) return; fs.rmSync(archive, { force: true }); errors.push(`${url}: checksum mismatch`); continue; }
+    catch (e) { errors.push(`${url}: ${e.message}`); }
+    console.error(`kodinncli: ${errors[errors.length - 1]} — retrying with the system downloader`);
+    fs.rmSync(archive, { force: true });
+    if (downloadWithSystemTool(url, archive)) {
+      if (sha256(archive) === build.sha256) return;
+      fs.rmSync(archive, { force: true }); errors.push(`${url}: checksum mismatch`);
+    }
+  }
+  throw new Error(errors.join("; "));
+}
+
 function sha256(file) {
   const h = crypto.createHash("sha256");
   h.update(fs.readFileSync(file));
@@ -59,12 +105,7 @@ async function install() {
   fs.mkdirSync(dir, { recursive: true });
   const archive = path.join(dir, path.basename(new URL(build.url).pathname));
   console.error(`kodinncli: first run of ${manifest.version} — fetching the ${key} build from digitalsolutions.it`);
-  await download(build.url, archive);
-  const got = sha256(archive);
-  if (got !== build.sha256) {
-    fs.rmSync(archive, { force: true });
-    throw new Error(`checksum mismatch for ${path.basename(archive)} (expected ${build.sha256}, got ${got})`);
-  }
+  await fetchArchive(archive);
   // WINDOWS: its own bsdtar (System32\tar.exe) opens .zip — a "tar" earlier on PATH is often Git's GNU tar, which
   // cannot, and reads "C:" as a remote host. PowerShell's Expand-Archive is the fallback.
   let ok = false;
@@ -80,14 +121,32 @@ async function install() {
   if (!ok) throw new Error("could not unpack " + archive);
   fs.rmSync(archive, { force: true });
   if (process.platform !== "win32") fs.chmodSync(exe, 0o755);
+  pruneOldVersions();
+}
+
+// UPGRADE: `npm install -g kodinncli@latest` brings a new launcher; its first run unpacks the new build, and here the
+// builds of earlier versions are removed so ~/.kodinncli does not grow by ~100 MB per release.
+function pruneOldVersions() {
+  try {
+    const root = path.join(home, "versions");
+    for (const v of fs.readdirSync(root)) if (v !== manifest.version) fs.rmSync(path.join(root, v), { recursive: true, force: true });
+  } catch { /* best effort */ }
+}
+
+// UNINSTALL: `kodinncli --purge-downloads` (run before `npm uninstall -g kodinncli`) deletes the downloaded builds.
+if (process.argv[2] === "--purge-downloads") {
+  fs.rmSync(path.join(home, "versions"), { recursive: true, force: true });
+  console.error(`kodinncli: removed ${path.join(home, "versions")}. Your settings are untouched; now run: npm uninstall -g kodinncli`);
+  process.exit(0);
 }
 
 (async () => {
   try {
     if (!fs.existsSync(exe)) await install();
   } catch (e) {
+    try { if (!fs.existsSync(exe)) fs.rmSync(dir, { recursive: true, force: true }); } catch { /* best effort */ }
     console.error(`kodinncli: ${e.message}`);
-    console.error(`kodinncli: download it by hand from ${build.url}`);
+    console.error(`kodinncli: download it by hand from ${sources().join(" or ")}`);
     process.exit(1);
   }
   // TELLS THE APP IT WAS INSTALLED BY NPM, so its updater runs `npm install -g kodinncli@latest`.

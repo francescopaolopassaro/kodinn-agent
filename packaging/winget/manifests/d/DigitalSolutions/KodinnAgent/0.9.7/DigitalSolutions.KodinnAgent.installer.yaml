@@ -1,0 +1,13 @@
+PackageIdentifier: DigitalSolutions.KodinnAgent
+PackageVersion: 0.9.7
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+  - RelativeFilePath: KodinnCli-0.9.7-win-x64\KodinnCli.exe
+    PortableCommandAlias: kodinn
+Installers:
+  - Architecture: x64
+    InstallerUrl: https://www.digitalsolutions.it/downloads/kodinncli/0.9.7/KodinnCli-0.9.7-win-x64.zip
+    InstallerSha256: 293701DD1ABAB8C82D2B4E6135A7AA58D08E17CB052D2034D5C757BB31B69179
+ManifestType: installer
+ManifestVersion: 1.6.0
